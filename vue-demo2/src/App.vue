@@ -70,11 +70,18 @@
     <hr/>
 
     <!-- 路由 -->
-    <router-link to="/pageA">pageA</router-link>
+    <!-- <router-link to="/pageA">pageA</router-link> -->
+    <div @click="jump()">pageA</div>
     <router-link to="/pageB">pageB</router-link>
+    <router-link to="/user">用户</router-link>
 
 
     <router-view></router-view>
+
+    <hr/>
+    <mt-button type="default">default</mt-button>
+    <mt-button type="primary">primary</mt-button>
+    <mt-button type="danger">danger</mt-button>
   </div>
 </template>
 
@@ -160,6 +167,10 @@ export default {
       .catch(error => {
         console.log(error);
       })
+    },
+    jump(){
+      this.$router.push({path:"pageA"});
+      // this.$router.push({name:"hhh"})
     }
   },
 

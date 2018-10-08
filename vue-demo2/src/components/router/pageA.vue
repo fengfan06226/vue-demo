@@ -25,7 +25,9 @@
                 // 原来会写的写法
                 // location.href = "#/content/"+id;
                 // 新写法
-                location.href = '#/content?id='+id;
+                // location.href = '#/content?id='+id;
+                // 编程式写法
+                this.$router.push({name:"aaa",params:{id}});
             }
         }
     }
