@@ -20,5 +20,42 @@
             }
         })
     </script>
+
+    <div id="app2">
+        <input type="radio" v-model="myBox" value="apple"/>
+        <input type="radio" v-model="myBox" value="banada"/>
+        <input type="radio" v-model="myBox" value="pineapple"/>
+        {{myBox}}
+    </div>
+    <script>
+        new Vue({
+            el:"#app2",
+            data(){
+                return {
+                    myBox:[]
+                }
+            }
+        })
+    </script>
+
+    <div id="app3">
+        <input type="text" v-model="msg" value="apple"/>
+        {{caclatur}}
+    </div>
+    <script>
+        new Vue({
+            el:"#app3",
+            data(){
+                return {
+                    msg:'aaa'
+                }
+            },
+            computed:{
+                caclatur(){
+                    return this.msg.replace(/\d/g,'');
+                }
+            }
+        })
+    </script>
 </body>
 </html>
