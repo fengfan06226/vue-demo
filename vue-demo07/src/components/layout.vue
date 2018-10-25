@@ -15,6 +15,10 @@
             </div>
         </div>
         <div class="app-content">
+            <ul>
+                <li></li>
+            </ul>
+
             <keep-alive>
                 <router-view></router-view>
             </keep-alive>
@@ -24,6 +28,20 @@
         </div>
     </div>
 </template>
+
+<script>
+    import menu from '../data/menuData.js'; 
+
+    console.log(menu);
+    
+    export default {
+        data(){
+            return {
+                menu:menu
+            }
+        }
+    }
+</script>
 
 <style scoped>
     .app-head{
