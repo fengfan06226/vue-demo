@@ -15,13 +15,12 @@
             </div>
         </div>
         <div class="app-content">
-            <ul>
-                <li></li>
-            </ul>
-
-            <keep-alive>
-                <router-view></router-view>
-            </keep-alive>
+            <side-bar></side-bar>
+            <div class="main">
+                <keep-alive>
+                    <router-view></router-view>
+                </keep-alive>
+            </div>
         </div>
         <div class="app-foot">
             <p>© 2018 fishenal MIT</p>
@@ -30,17 +29,21 @@
 </template>
 
 <script>
-    import menu from '../data/menuData.js'; 
+    import menu from './menu.vue';
 
-    console.log(menu);
-    
     export default {
+        name: 'app-content',
+
         data(){
             return {
-                menu:menu
+
             }
+        },
+        components:{
+            'side-bar': menu
         }
     }
+
 </script>
 
 <style scoped>
@@ -69,6 +72,16 @@
         text-align: center;
         margin-top: 5px;
         cursor: pointer;
+    }
+    .app-content{
+        display: flex;
+    }
+    .app-content ul{
+        width: 200px;
+    }
+    .app-content .main{
+        flex: 1;
+        text-align: center;
     }
     .app-foot{
         height: 60px;
